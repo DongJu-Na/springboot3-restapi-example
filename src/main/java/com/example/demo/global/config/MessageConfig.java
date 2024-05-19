@@ -12,7 +12,7 @@ public class MessageConfig {
 
     @Bean
     public LocaleResolver localeResolver() {
-        final var sessionLocaleResolver = new SessionLocaleResolver();
+        final SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
         sessionLocaleResolver.setDefaultLocale(Locale.KOREAN);
         return sessionLocaleResolver;
     }

@@ -27,7 +27,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
             public ResponseEntity<Object> handleServerException(Exception exception, WebRequest webRequest) {
-        final var errorResponse = ErrorResponse.of(exception.getMessage(),
+        final ErrorResponse errorResponse = ErrorResponse.of(exception.getMessage(),
                 LocalDateTime.now(), webRequest.getDescription(false));
         return new ResponseEntity<>(errorResponse, INTERNAL_SERVER_ERROR);
     }
